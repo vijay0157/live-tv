@@ -30,7 +30,10 @@ jobs:
     - name: Build Android Debug APK
       run: |
         cd android
-        gradle assembleDebug --stacktrace
+        echo "sdk.dir=$ANDROID_HOME" > local.properties
+        gradle wrapper --gradle-version 8.4
+        chmod +x gradlew
+        ./gradlew assembleDebug --stacktrace
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
