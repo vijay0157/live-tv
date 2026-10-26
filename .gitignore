@@ -1,0 +1,32 @@
+# Ignore temporary Python test files
+test_*.py
+inspect_*.py
+check_*.py
+debug_*.py
+find_*.py
+probe_*.py
+scan_*.py
+verify_*.py
+apply_star_fixes.py
+fix_all_keys.py
+update_all_star.py
+analyze_sports.py
+list_*.py
+search_*.py
+
+# Ignore test media & screenshots
+*.png
+!icon.png
+!largeIcon.png
+!drmlive_logo.png
+*.mp4
+*.apk
+*.ipk
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE / Scratch
+.agents/
+scratch/

@@ -1,0 +1,20 @@
+{
+  "id": "com.ottnavigator.webos",
+  "version": "1.0.0",
+  "vendor": "Scillarium Community",
+  "type": "web",
+  "main": "index.html",
+  "title": "OTT Navigator",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "bgImage": "icon.png",
+  "resolution": "1920x1080",
+  "uiRevision": "2",
+  "disableBackHistoryAPI": true,
+  "supportTouchMode": false,
+  "trustLevel": "default",
+  "requiredACG": [],
+  "requiredPermissions": [
+    "internet"
+  ]
+}

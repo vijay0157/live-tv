@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>OTT Navigator - LG webOS TV</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app-container">
+    <!-- TOP HEADER -->
+    <header class="app-header">
+      <div class="brand-section">
+        <img src="icon.png" alt="OTT Navigator" class="brand-icon">
+        <div class="brand-title">
+          <span>OTT NAVIGATOR</span>
+          <span class="brand-badge">webOS TV</span>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+          <input type="text" id="search-input" class="search-input focusable" placeholder="Search channels or programs..." autocomplete="off">
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div id="active-playlist-badge" class="brand-badge" style="background: rgba(0, 242, 254, 0.15); border: 1px solid rgba(0, 242, 254, 0.3); color: var(--accent-cyan); padding: 6px 12px; font-size: 0.8rem;">
+          Live TV: Loading...
+        </div>
+
+        <button id="btn-refresh-playlist" class="btn-header focusable" onclick="window.app.reloadDefaultPlaylist()" title="Refresh channels from default playlist">
+          <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+          <span>Refresh</span>
+        </button>
+
+        <div class="clock-widget">
+          <div id="clock-time" class="clock-time">--:--</div>
+          <div id="clock-date" class="clock-date">---</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN VIEWPORT -->
+    <div class="main-viewport">
+      <!-- SIDEBAR CATEGORIES & SOURCES -->
+      <aside class="app-sidebar">
+        <div class="sidebar-mode-toggle">
+          <button id="mode-tab-categories" class="sidebar-mode-btn active focusable" onclick="window.app.setSidebarMode('categories')">
+            <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+            <span>Categories</span>
+          </button>
+          <button id="mode-tab-sources" class="sidebar-mode-btn focusable" onclick="window.app.setSidebarMode('sources')">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span>By Source</span>
+          </button>
+        </div>
+        <div id="sidebar-title" class="sidebar-title">Categories</div>
+        <ul id="category-list" class="category-list">
+          <!-- Dynamically populated -->
+        </ul>
+      </aside>
+
+      <!-- CONTENT AREA -->
+      <main class="content-area">
+        <div class="content-toolbar">
+          <div class="active-view-info">
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <h1 id="active-category-title" class="active-category-title">All Channels</h1>
+              <span id="source-status-badge" class="source-status-badge" style="display: none;"></span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; margin-top: 4px;">
+              <span id="channel-stats" class="channel-stats">Loading streams...</span>
+              <button id="btn-check-sources" class="btn-check-sources focusable" onclick="window.app.checkSourcesHealth()" title="Probe all stream sources to identify live and offline sources">
+                <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+                <span>Check Sources Health</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="view-tabs">
+            <button id="tab-grid" class="view-tab active focusable" onclick="if(window.app.currentView !== 'grid') window.app.toggleViewMode()">
+              <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+              <span>Channel Grid</span>
+            </button>
+            <button id="tab-epg" class="view-tab focusable" onclick="if(window.app.currentView !== 'epg') window.app.toggleViewMode()">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+              <span>TV Guide (EPG)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- CHANNEL GRID VIEW -->
+        <div class="channel-grid-container">
+          <div id="channel-grid" class="channel-grid">
+            <div class="channel-loading-banner" style="grid-column: 1/-1; padding: 60px 20px; text-align: center; color: var(--accent-cyan);">
+              <div class="spinner" style="width: 44px; height: 44px; border-width: 3px; margin: 0 auto 20px;"></div>
+              <h2 style="font-size: 1.3rem; margin-bottom: 8px; color: #fff;">Loading Live Channels...</h2>
+              <p style="color: var(--text-dim); font-size: 0.95rem;">Fetching default playlist (https://la.drmlive.net/tp/playlist.php)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EPG MATRIX VIEW -->
+        <div id="epg-guide-container" class="epg-guide-container">
+          <!-- EPG Timeline matrix rendered here -->
+        </div>
+      </main>
+    </div>
+
+    <!-- REMOTE LEGEND FOOTER -->
+    <footer class="remote-legend-bar">
+      <div class="legend-item">
+        <span class="color-dot red"></span>
+        <span>Toggle Favorite</span>
+      </div>
+      <div class="legend-item">
+        <span class="color-dot green"></span>
+        <span>Switch View</span>
+      </div>
+      <div class="legend-item">
+        <span class="color-dot yellow"></span>
+        <span>Refresh Channels</span>
+      </div>
+      <div class="legend-item">
+        <span class="color-dot blue"></span>
+        <span>Aspect Ratio</span>
+      </div>
+      <div class="legend-item">
+        <span class="key-badge">OK</span>
+        <span>Select / Play</span>
+      </div>
+      <div class="legend-item">
+        <span class="key-badge">BACK</span>
+        <span>Return</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- FULLSCREEN VIDEO PLAYER -->
+  <div id="player-container">
+    <video id="video-element" playsinline></video>
+
+    <!-- Buffering Spinner -->
+    <div id="player-buffering" class="player-buffering">
+      <div class="spinner"></div>
+      <div class="buffering-text">Buffering Stream...</div>
+    </div>
+
+    <!-- Playback Error Display (Channel Offline / Playback Failed) -->
+    <div id="player-error" class="player-error" style="display: none;">
+      <div class="player-error-badge">
+        <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </div>
+      <div id="player-error-title" class="player-error-title">Stream Offline or Unreachable</div>
+      <div id="player-error-detail" class="player-error-detail">This channel is currently not broadcasting or failed to connect.</div>
+      <div class="player-error-actions">
+        <button class="player-error-btn retry-btn focusable" onclick="if(window.player) window.player.retryCurrentChannel()">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+          <span>Retry (OK)</span>
+        </button>
+        <button class="player-error-btn return-btn focusable" onclick="if(window.player) window.player.exit()">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          <span>Back to Channels</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- On-Screen Display (OSD) -->
+    <div id="player-osd" class="player-osd">
+      <div class="osd-top">
+        <div class="osd-channel-meta">
+          <img id="osd-channel-logo" class="osd-channel-logo" src="" alt="Channel Logo">
+          <div class="osd-channel-details">
+            <div id="osd-channel-name" class="osd-channel-name">Channel Name</div>
+            <div id="osd-program-name" class="osd-program-name">Current Show</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="osd-bottom">
+        <div class="osd-progress-wrap">
+          <div id="osd-time-info" class="osd-time-info">
+            <span>Now: Live Broadcast</span>
+            <span>Next: Upcoming Program</span>
+          </div>
+          <div class="epg-progress-bar">
+            <div id="osd-progress-fill" class="epg-progress-fill" style="width: 50%;"></div>
+          </div>
+        </div>
+
+        <div class="osd-controls-row">
+          <div class="osd-btn-group">
+            <button class="osd-btn focusable" onclick="window.player.togglePlayPause()">
+              <svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              <span>Play/Pause</span>
+            </button>
+            <button class="osd-btn focusable" onclick="window.player.cycleAspectRatio()">
+              <svg viewBox="0 0 24 24"><path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/></svg>
+              <span>Aspect</span>
+            </button>
+            <button class="osd-btn focusable" onclick="window.player.toggleQuickZapper()">
+              <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+              <span>Channel List</span>
+            </button>
+          </div>
+
+          <div class="osd-btn-group">
+            <button class="osd-btn focusable" onclick="window.player.exit()">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              <span>Close Player</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Zapper Drawer (Channel List Sidebar during video playback) -->
+    <div id="quick-zapper" class="quick-zapper">
+      <div class="quick-zapper-header">
+        <h2 class="quick-zapper-title">Quick Channel Switcher</h2>
+      </div>
+      <ul id="quick-channel-list" class="quick-channel-list">
+        <!-- Populated dynamically -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- PLAYLIST MANAGER MODAL -->
+  <div id="playlist-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Load M3U / M3U8 Playlist</h2>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 4px;">Enter your IPTV playlist URL to load channels and EPG</p>
+        </div>
+        <button class="modal-close focusable" onclick="window.app.closeModal()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="playlist-url-input">M3U / M3U8 Stream URL:</label>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" id="playlist-url-input" class="form-input focusable" placeholder="https://provider.com/playlist.m3u8" style="flex: 1;">
+            <button id="btn-load-url" class="btn-primary focusable" style="white-space: nowrap;">
+              Load Playlist
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Status / Loading Spinner -->
+        <div id="playlist-status-bar" style="display: none; padding: 12px 16px; border-radius: 10px; background: rgba(0, 242, 254, 0.1); border: 1px solid rgba(0, 242, 254, 0.3); color: var(--accent-cyan); font-weight: 600; font-size: 0.9rem; align-items: center; gap: 12px;">
+          <div class="spinner" style="width: 22px; height: 22px; border-width: 2px;"></div>
+          <span id="playlist-status-text">Fetching playlist...</span>
+        </div>
+
+        <!-- Preset Samples -->
+        <div class="form-group" style="margin-top: 4px;">
+          <label class="form-label">Or Choose a Free Public Playlist Preset:</label>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <button type="button" class="btn-secondary focusable" style="font-size: 0.82rem; height: 36px; padding: 0 14px;" onclick="window.app.loadPreset('https://iptv-org.github.io/iptv/languages/eng.m3u')">
+              🌍 Global English (IPTV-org)
+            </button>
+            <button type="button" class="btn-secondary focusable" style="font-size: 0.82rem; height: 36px; padding: 0 14px;" onclick="window.app.loadPreset('https://i.mjh.nz/SamsungTVPlus/all.m3u8')">
+              📺 Samsung TV Plus (Free)
+            </button>
+            <button type="button" class="btn-secondary focusable" style="font-size: 0.82rem; height: 36px; padding: 0 14px;" onclick="window.app.loadPreset('https://i.mjh.nz/PBS/all.m3u8')">
+              🏛️ PBS Kids & Live TV
+            </button>
+          </div>
+        </div>
+
+        <!-- User-Agent Setting -->
+        <div class="form-group" style="margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label class="form-label" for="user-agent-select">Provider User-Agent:</label>
+            <span style="font-size: 0.78rem; color: var(--accent-cyan); font-weight: 700; background: rgba(0, 242, 254, 0.12); padding: 2px 8px; border-radius: 4px;">
+              Active: OTT Navigator
+            </span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <select id="user-agent-select" class="form-input focusable" style="flex: 1; cursor: pointer; background: rgba(20, 26, 40, 0.9);">
+              <option value="OTT Navigator/1.7.0.2">OTT Navigator/1.7.0.2 (Recommended)</option>
+              <option value="OTT Navigator">OTT Navigator</option>
+              <option value="TiviMate/4.7.0">TiviMate/4.7.0</option>
+              <option value="VLC/3.0.18 LibVLC/3.0.18">VLC / LibVLC</option>
+              <option value="custom">Custom User-Agent...</option>
+            </select>
+            <input type="text" id="user-agent-custom-input" class="form-input focusable" placeholder="Type custom User-Agent" style="flex: 1; display: none;">
+          </div>
+        </div>
+
+        <div style="margin: 6px 0; border-top: 1px dashed var(--border-glass);"></div>
+
+        <div class="form-group">
+          <label class="form-label" for="file-upload-input">Or Upload a Local .M3U / .M3U8 File from Device:</label>
+          <input type="file" id="file-upload-input" class="form-input focusable" accept=".m3u,.m3u8,.txt">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-reset-demo" class="btn-secondary focusable">
+          Use Built-in Free HD Channels
+        </button>
+        <button class="btn-secondary focusable" onclick="window.app.closeModal()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- JAVASCRIPT LIBS -->
+  <script src="js/shaka-player.compiled.js"></script>
+  <script src="js/hls.min.js"></script>
+  <script src="js/m3u-parser.js"></script>
+  <script src="js/epg.js"></script>
+  <script src="js/remote-nav.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
