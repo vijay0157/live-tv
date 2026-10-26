@@ -13,7 +13,7 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:banner="@drawable/ic_launcher"
+        android:banner="@drawable/banner"
         android:label="OTT Navigator Live TV"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
         android:usesCleartextTraffic="true">

@@ -29,6 +29,7 @@ jobs:
 
     - name: Build Android Debug APK
       run: |
+        set -e
         curl -sLO https://services.gradle.org/distributions/gradle-8.4-bin.zip
         unzip -q gradle-8.4-bin.zip
         export PATH=$PWD/gradle-8.4/bin:$PATH
@@ -36,14 +37,8 @@ jobs:
         cd android
         echo "sdk.dir=$ANDROID_HOME" > local.properties
         yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
-        gradle assembleDebug --stacktrace 2>&1 | tee build.log
-
-    - name: Upload Build Log
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-log
-        path: android/build.log
+        gradle assembleDebug --stacktrace
+        ls -la app/build/outputs/apk/debug/
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
@@ -64,5 +59,6 @@ jobs:
           - Full 1080p 50fps Star Sports, EPG, Remote Control, and 2,193 Live Channels.
           - No PC needed!
         files: android/app/build/outputs/apk/debug/*.apk
+        fail_on_unmatched_files: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

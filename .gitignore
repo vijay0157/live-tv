@@ -19,6 +19,7 @@ search_*.py
 !icon.png
 !largeIcon.png
 !drmlive_logo.png
+!android/app/src/main/res/**
 *.mp4
 *.apk
 *.ipk
