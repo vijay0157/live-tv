@@ -1,0 +1,175 @@
+#EXTM3U x-tvg-url="https://la.drmlive.net/tp/epg.xml.gz"
+#EXTINF:-1 tvg-id="1260000035" tvg-logo="https://i.ibb.co/NNSyf29/IMG-20220810-102425-689.jpg" group-title="Cricket" ,Star Sports 1 HD1
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1106
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1106.mpd
+#EXTINF:-1 tvg-id="1260000033" tvg-logo="https://i.ibb.co/t8ByLSf/IMG-20220810-102422-452.jpg" group-title="Cricket" ,Star Sports 2 HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1109
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1109.mpd
+#EXTINF:-1 tvg-id="1260000025" tvg-logo="https://i.ibb.co/Pj4DXxP/IMG-20220810-102427-705.jpg" group-title="Cricket" ,Star Sports 1 Hindi HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1108
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1108.mpd
+#EXTINF:-1 tvg-id="1260000034" tvg-logo="https://i.ibb.co/ZS0ZQ62/IMG-20220810-102418-124.jpg" group-title="Cricket" ,Star Sports Select 1 HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=460
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/460.mpd
+#EXTINF:-1 tvg-id="1260000024" tvg-logo="https://i.ibb.co/LvYKs3k/IMG-20220810-102413-922.jpg" group-title="Sports" ,Star Sports Select 2 HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=461
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/461.mpd
+#EXTINF:-1 tvg-id="362" tvg-name="Star Sports Hindi 1" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_1_Hindi.png" group-title="Sports", Star Sports Hindi 1
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=362
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/362.mpd
+#EXTINF:-1 tvg-id="460" tvg-name="Star Sports Select HD1" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_Select_HD_1.png" group-title="Sports", Star Sports Select HD1
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=460
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/460.mpd
+#EXTINF:-1 tvg-id="461" tvg-name="Star Sports Select HD2" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_Select_HD_2.png" group-title="Sports", Star Sports Select HD2
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=461
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/461.mpd
+#EXTINF:-1 tvg-id="1106" tvg-name="Star Sports HD1" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_HD1.png" group-title="Sports", Star Sports HD1
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1106
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1106.mpd
+#EXTINF:-1 tvg-id="1108" tvg-name="Star Sports HD1 Hindi" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_HD1_Hindi.png" group-title="Sports", Star Sports HD1 Hindi
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1108
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1108.mpd
+#EXTINF:-1 tvg-id="1109" tvg-name="Star Sports HD2" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_HD2.png" group-title="Sports", Star Sports HD2
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1109
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1109.mpd
+#EXTINF:-1 tvg-id="1114" tvg-name="Star Sports Select 2" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_Select_2.png" group-title="Sports", Star Sports Select 2
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1114
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1114.mpd
+#EXTINF:-1 tvg-id="1122" tvg-name="Star Sports 2 Kannada	" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_2_Kannada.png" group-title="Sports", Star Sports 2 Kannada
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1122
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1122.mpd
+#EXTINF:-1 tvg-id="1123" tvg-name="Star Sports Select 1" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_Select_1.png" group-title="Sports", Star Sports Select 1
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1123
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1123.mpd
+#EXTINF:-1 tvg-id="1124" tvg-name="Star Sports 1 Tamil" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_1_Tamil.png" group-title="Sports", Star Sports 1 Tamil
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1124
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1124.mpd
+#EXTINF:-1 tvg-id="1141" tvg-name="Star Sports 2" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_2.png" group-title="Sports", Star Sports 2
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1141
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1141.mpd
+#EXTINF:-1 tvg-id="1142" tvg-name="Star Sports1" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_1.png" group-title="Sports", Star Sports1
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1142
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1142.mpd
+#EXTINF:-1 tvg-id="1389" tvg-name="Star Sports 3" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_3.png" group-title="Sports", Star Sports 3
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1389
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1389.mpd
+#EXTINF:-1 tvg-id="1650" tvg-name="Star Sports 1 Kannada " tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_1_Kannada.png" group-title="Sports", Star Sports 1 Kannada
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1650
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1650.mpd
+#EXTINF:-1 tvg-id="1651" tvg-name="Star Sports 1 Telugu " tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_1_Telugu.png" group-title="Sports", Star Sports 1 Telugu
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1651
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1651.mpd
+#EXTINF:-1 tvg-id="1984" tvg-name="Star Sports 2 Hindi HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/StarSportsHD2Hin.png" group-title="Sports", Star Sports 2 Hindi HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1984
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1984.mpd
+#EXTINF:-1 tvg-id="1985" tvg-name="Star Sports 2 Hindi" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/StarSports2Hin.png" group-title="Sports", Star Sports 2 Hindi
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1985
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1985.mpd
+#EXTINF:-1 tvg-id="1998" tvg-name="Star Sports Khel" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/StarSportsKhel.png" group-title="Sports", Star Sports Khel
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=1998
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/1998.mpd
+#EXTINF:-1 tvg-id="2852" tvg-name="Star Sports 2 Telugu" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/StarSports2Telugu.png" group-title="Sports", Star Sports 2 Telugu
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=2852
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/2852.mpd
+#EXTINF:-1 tvg-id="2853" tvg-name="Star Sports 2 Tamil" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/StarSports2Tamil.png" group-title="Sports", Star Sports 2 Tamil
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=2853
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/2853.mpd
+#EXTINF:-1 tvg-id="3273" tvg-name="Star Sports 2 Tamil HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports2_Tamil_HD.png" group-title="Sports", Star Sports 2 Tamil HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=3273
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/3273.mpd
+#EXTINF:-1 tvg-id="3274" tvg-name="Star Sports 2 Telugu HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports2_Telugu_HD.png" group-title="Sports", Star Sports 2 Telugu HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=3274
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/3274.mpd
+#EXTINF:-1 tvg-id="3277" tvg-name="Star Sports 1 Tamil HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_1_Tamil_HD.png" group-title="Sports", Star Sports 1 Tamil HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=3277
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/3277.mpd
+#EXTINF:-1 tvg-id="3278" tvg-name="Star Sports 1 Telugu HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Star_Sports_1_Telugu_HD.png" group-title="Sports", Star Sports 1 Telugu HD
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://jt.drmlive.net/jiotvplus/jtck?id=3278
+#EXTVLCOPT:http-user-agent=OTT Navigator/1.7.0.2
+https://jt.drmlive.net/jiotvplus/3278.mpd

@@ -30,3 +30,11 @@ __pycache__/
 # IDE / Scratch
 .agents/
 scratch/
+
+# Android & Gradle
+.gradle/
+build/
+android/.gradle/
+android/app/build/
+*.lock
+
